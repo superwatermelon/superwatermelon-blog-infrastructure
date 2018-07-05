@@ -1,6 +1,0 @@
-.terraform/
-backend.hcl
-terraform.tfplan
-terraform.tfstate
-terraform.tfstate.backup
-terraform.tfvars

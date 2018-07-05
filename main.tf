@@ -1,5 +1,3 @@
 terraform {
-  backend "s3" {
-    key = "superwatermelon-blog/terraform.tfstate"
-  }
+  required_version = ">= 0.9.0"
 }
