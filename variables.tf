@@ -13,8 +13,13 @@ variable "asg_id" {
   type        = "string"
 }
 
-variable "alb_arn" {
-  description = "The Application Load Balancer that is hosting the blog"
+variable "http_listener_arn" {
+  description = "The ALB listener for HTTP traffic"
+  type        = "string"
+}
+
+variable "https_listener_arn" {
+  description = "The ALB listener for HTTPS traffic"
   type        = "string"
 }
 

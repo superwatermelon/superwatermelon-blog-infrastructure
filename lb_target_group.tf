@@ -21,7 +21,22 @@ resource "aws_autoscaling_attachment" "asg" {
 }
 
 resource "aws_lb_listener_rule" "blog" {
-  listener_arn = "${var.alb_arn}"
+  listener_arn = "${var.http_listener_arn}"
+  priority     = 100
+
+  action {
+    type             = "forward"
+    target_group_arn = "${aws_lb_target_group.blog.arn}"
+  }
+
+  condition {
+    field  = "host-header"
+    values = ["${var.host}"]
+  }
+}
+
+resource "aws_lb_listener_rule" "blog_ssl" {
+  listener_arn = "${var.https_listener_arn}"
   priority     = 100
 
   action {
