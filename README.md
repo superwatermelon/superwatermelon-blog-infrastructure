@@ -15,7 +15,8 @@ module "blog" {
   artifact_bucket_name = "artifacts"
   vpc_id = "${aws_vpc.main.id}"
   asg_id = "${aws_autoscaling_group.main.id}"
-  alb_arn = "${aws_lb.main.arn}"
+  http_listener_arn = "${aws_lb_listener.main_http.arn}"
+  https_listener_arn = "${aws_lb_listener.main_https.arn}"
   host = "blog.example.com"
 }
 ```
