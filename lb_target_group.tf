@@ -37,7 +37,7 @@ resource "aws_lb_listener_rule" "blog" {
 
 resource "aws_lb_listener_rule" "www_blog" {
   listener_arn = "${var.http_listener_arn}"
-  priority     = 100
+  priority     = 200
 
   action {
     type             = "forward"
@@ -67,7 +67,7 @@ resource "aws_lb_listener_rule" "blog_ssl" {
 
 resource "aws_lb_listener_rule" "www_blog_ssl" {
   listener_arn = "${var.https_listener_arn}"
-  priority     = 100
+  priority     = 200
 
   action {
     type             = "forward"
